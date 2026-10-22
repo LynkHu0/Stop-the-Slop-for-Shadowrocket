@@ -12,7 +12,7 @@ for(const [entry,name] of [['title-runtime','Title'],['session','Session'],['grp
 await copyFile(path.join(root,'node_modules/js-md5/LICENSE.txt'),path.join(out,'js-md5-LICENSE.txt'));
 await copyFile(path.join(root,'node_modules/fflate/LICENSE'),path.join(out,'fflate-LICENSE.txt'));
 await copyFile(path.join(root,'docs/INSTALL-Title.txt'),path.join(out,'INSTALL.txt'));
-const module=`#!name=NoAIText B站标题文案检测
+const module=`#!name=Stop the Slop for Shadowrocket
 #!desc=在普通视频卡片标题前显示「14%」等疑似AI文案分数。等待字幕与推理后返回列表；不改图片。先停用所有旧封面检测模块。
 #!version=0.4.2
 #!arguments=DeepSeekKey:请填写自己的Key,模型:deepseek-flash,思考:true,强度:high,等待秒:45,DeepSeek并发:10,缓存天:7

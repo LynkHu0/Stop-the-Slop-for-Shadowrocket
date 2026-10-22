@@ -1,4 +1,4 @@
-# NoAIText iOS 标题版 0.4.2
+# Stop the Slop for Shadowrocket 0.4.2
 
 当前路线恢复为标题前缀「14%」，不再拦截封面、修改图片地址或进行JPEG处理。
 
@@ -18,7 +18,7 @@
 
 ## 下载与首次安装
 
-- [下载安装包](https://github.com/LynkHu0/bilibili-ai-script-detector-shadowrocket/releases/latest)，解压后阅读 INSTALL.txt。
+- [下载安装包](https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket/releases/latest)，解压后阅读 INSTALL.txt。
 - 需要 iOS、Shadowrocket、自己的 DeepSeek API Key，以及可正常使用的 B站网页登录态。
 - 将安装包的 Script 目录下4个脚本复制至 iCloud 云盘/Shadowrocket/Script/，将 `.srmodule` 文件复制至 iCloud 云盘/Shadowrocket/Modules/。在 Shadowrocket 模块中启用并填写自己的 Key，编译配置。HTTPS 解密证书须由使用者自行安装、信任和配置。
 - 脚本在本机读取 B站会话以请求官方字幕；字幕发送至 DeepSeek 官方接口用于评分，Key 仅用于 DeepSeek 请求，B站 Cookie 不发送给 DeepSeek。调用会消耗自己的 API 余额。不要分享已填写 Key 的模块、会话或日志。

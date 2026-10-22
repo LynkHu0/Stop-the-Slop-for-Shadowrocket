@@ -1,4 +1,4 @@
-NoAIText iOS 标题版 0.4.2
+Stop the Slop for Shadowrocket 0.4.2
 
 回到标题显示：检测成功后，视频标题变成「14%」原标题。
 可设置DeepSeek并发1~100，默认10；DeepSeek Flash、思考开启、强度high。模型与思考设置仍可修改。
@@ -8,7 +8,7 @@ NoAIText iOS 标题版 0.4.2
 2. 把本包Script中的4个JS复制到 iCloud云盘/Shadowrocket/Script/：
    NoAIText.Title.js、NoAIText.GrpcTitle.js、NoAIText.Session.js、NoAIText.Status.js。
 3. 把NoAIText.Title.srmodule复制到 iCloud云盘/Shadowrocket/Modules/。
-4. 小火箭“配置 > 模块”刷新并启用“NoAIText B站标题文案检测”，确认自己的DeepSeekKey已填写。重新编译当前配置。
+4. 小火箭“配置 > 模块”刷新并启用“Stop the Slop for Shadowrocket”，确认自己的DeepSeekKey已填写。重新编译当前配置。
 5. 完全退出B站再打开，刷新新列表。封面版曾写入的临时图片地址可能留在App缓存中；如旧封面仍异常，在B站设置中清理图片/应用缓存后重启刷新（不用清除账号登录数据）。
 6. 保持现有已信任的HTTPS解密证书与HTTP/2解密。标题模块只处理列表接口，不再添加图片CDN解密主机名；已有主机名不会自动移除，但没有启用封面脚本时不会再改图。
 
