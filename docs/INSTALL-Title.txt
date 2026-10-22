@@ -1,4 +1,4 @@
-Stop the Slop for Shadowrocket 0.4.2
+Stop the Slop for Shadowrocket 0.4.3
 
 回到标题显示：检测成功后，视频标题变成「14%」原标题。
 可设置DeepSeek并发1~100，默认10；DeepSeek Flash、思考开启、强度high。模型与思考设置仍可修改。
@@ -29,11 +29,17 @@ Stop the Slop for Shadowrocket 0.4.2
 
 本包是从已有标题适配恢复出的安装版，并不意味着最新版B站所有入口已由真机验收。各版本安装包和源码单独留档。
 
-0.4.2更新：替换4个JS和同名标题模块，确认新增参数“DeepSeek并发”为10（或你想要的1~100），重新编译后重启刷新B站。跨脚本并发仍为软限制，100是可设置上限，不保证同时恰好运行100个。
+0.4.3更新：替换4个JS和同名标题模块，确认新增参数“DeepSeek并发”为10（或你想要的1~100），重新编译后重启刷新B站。跨脚本并发仍为软限制，100是可设置上限，不保证同时恰好运行100个。
 
-0.4.2评分问题调整
+0.4.3评分问题调整
 采用原项目固定commit dec988b03ff63224aa6d6c796b5963eb3ccac95e的Jev主路径问题：Is it AI-generated, yes or no?
 不再附加我们自写的中文AI文案特征标准。只补充DeepSeek返回0~1 JSON score所需的输出格式说明，用户消息直接传字幕前15000字符，不再加中文note。
 仍调用自己的DeepSeek，不是原项目的TypeSafe Jev接口，所以评分数值不保证相同，仍非校准概率。
 提示词缓存版本更新为upstream-jev-question-v1，原zh-score-v3评分不会被混用；旧数据不删除，新标准第一次会重新检测。
 模型、思考high、并发1~100默认10及其他设置不变。替换4个JS和标题模块并重新编译后生效。
+
+0.4.3隐私与会话清除
+本项目不是Stop the Slop、Shadowrocket或B站官方产品。百分比是疑似评分，不是创作来源证明。
+会话保存在Shadowrocket持久存储中，14天为逻辑有效期，不保证到期删除；停用模块不会清除会话。模块参数Key、iCloud副本和备份须由用户另行管理。
+先完全退出B站App并等待检测请求结束，在本模块仍启用时用Safari访问 https://www.bilibili.com/noaitext-status ，勾选确认并清除本机会话；成功后立即停用模块或Session脚本，避免再次捕获。仅清除本机session值，不退出B站、不撤销服务端会话、不删除Key/缓存。
+升级时替换4个JS和标题模块，再重新编译。Status脚本需要requires-body=1以处理确认表单。详情见随包PRIVACY.md。
