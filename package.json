@@ -1,0 +1,21 @@
+{
+  "name": "noaitext-ios-deepseek",
+  "version": "0.4.2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build-title.mjs",
+    "build:probe": "node build.mjs",
+    "test": "node build-detector.mjs && node build-title-legacy.mjs && node build-cover.mjs && node build-title.mjs && node --test tests/*.test.mjs",
+    "build:cover": "node build-title-legacy.mjs && node build-cover.mjs",
+    "build:title": "node build-title.mjs"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "jpeg-js": "0.4.4",
+    "js-md5": "^0.8.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.0"
+  }
+}

@@ -1,0 +1,39 @@
+NoAIText iOS 标题版 0.4.2
+
+回到标题显示：检测成功后，视频标题变成「14%」原标题。
+可设置DeepSeek并发1~100，默认10；DeepSeek Flash、思考开启、强度high。模型与思考设置仍可修改。
+
+从封面版切回
+1. 停用所有NoAIText封面版、Cover独立检测、TEST探针和其他旧NoAIText模块。
+2. 把本包Script中的4个JS复制到 iCloud云盘/Shadowrocket/Script/：
+   NoAIText.Title.js、NoAIText.GrpcTitle.js、NoAIText.Session.js、NoAIText.Status.js。
+3. 把NoAIText.Title.srmodule复制到 iCloud云盘/Shadowrocket/Modules/。
+4. 小火箭“配置 > 模块”刷新并启用“NoAIText B站标题文案检测”，确认自己的DeepSeekKey已填写。重新编译当前配置。
+5. 完全退出B站再打开，刷新新列表。封面版曾写入的临时图片地址可能留在App缓存中；如旧封面仍异常，在B站设置中清理图片/应用缓存后重启刷新（不用清除账号登录数据）。
+6. 保持现有已信任的HTTPS解密证书与HTTP/2解密。标题模块只处理列表接口，不再添加图片CDN解密主机名；已有主机名不会自动移除，但没有启用封面脚本时不会再改图。
+
+旧封面模块必须停用，仅复制标题脚本不足以解除旧图片拦截。
+本机已有的B站网页登录态与评分缓存可沿用。出现「需登录」时，在Safari登录www.bilibili.com，并访问api.bilibili.com/x/web-interface/nav确认isLogin为true。
+不要把Key、Cookie或填写后的模块/.meta发给别人。
+
+行为
+- 不拦截图片，不转JPEG，不再给封面URL加标记；保留列表中的原封面和视频链接。
+- 等待字幕和DeepSeek评分后一次返回该批列表。已显示的旧标题不会主动更新。
+- 在“编辑参数”中设置“DeepSeek并发”：1~100，默认10；固定单路限制已移除。同视频尽量合并检测；旧“并发”“AI并发”参数不生效。字幕准备使用独立队列（最高6个），DeepSeek名额按你填写的值设置。
+- 继续保留之前补齐的av/vertical_av、Story URI、搜索JSON/搜索gRPC、UP主页/空间、关注动态JSON/gRPC卡片适配。
+- 只评分有可用官方字幕的普通视频。无字幕、字幕太短、超时、登录/API错误分别标记，不生成虚假百分比。分数不构成来源证明。
+- 等待秒默认45（5~50），仍为整批共同预算。提高并发并不缩短单次推理时间；一批视频较多时可能出现待检或超时，App也可能更早结束请求。
+
+诊断
+在B站打开目标页后，用Safari访问 https://www.bilibili.com/noaitext-status 。诊断只显示本机计数和状态，不含个人Key、Cookie或视频标题。
+
+本包是从已有标题适配恢复出的安装版，并不意味着最新版B站所有入口已由真机验收。各版本安装包和源码单独留档。
+
+0.4.2更新：替换4个JS和同名标题模块，确认新增参数“DeepSeek并发”为10（或你想要的1~100），重新编译后重启刷新B站。跨脚本并发仍为软限制，100是可设置上限，不保证同时恰好运行100个。
+
+0.4.2评分问题调整
+采用原项目固定commit dec988b03ff63224aa6d6c796b5963eb3ccac95e的Jev主路径问题：Is it AI-generated, yes or no?
+不再附加我们自写的中文AI文案特征标准。只补充DeepSeek返回0~1 JSON score所需的输出格式说明，用户消息直接传字幕前15000字符，不再加中文note。
+仍调用自己的DeepSeek，不是原项目的TypeSafe Jev接口，所以评分数值不保证相同，仍非校准概率。
+提示词缓存版本更新为upstream-jev-question-v1，原zh-score-v3评分不会被混用；旧数据不删除，新标准第一次会重新检测。
+模型、思考high、并发1~100默认10及其他设置不变。替换4个JS和标题模块并重新编译后生效。

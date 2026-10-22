@@ -1,0 +1,13 @@
+node_modules/
+.local-data/
+.npm-cache/
+dist/
+.DS_Store
+.env*
+*.log
+*.meta
+accounts.json
+providers.json
+connection.json
+usage.json
+official-usage.json
