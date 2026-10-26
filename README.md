@@ -2,7 +2,7 @@
 
 > **AI Script Detector for Bilibili · Shadowrocket Edition**：读取 B站视频字幕，用自己的 DeepSeek API 为文案评分，并在支持的视频标题前显示如「14%」的疑似分数。
 
-[![Download](https://img.shields.io/badge/Download-GitHub_Releases-0f172a?style=flat-square)](https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket/releases/latest)
+[![Download](https://img.shields.io/badge/Download-GitHub_Releases-0f172a?style=flat-square)](https://github.com/LynkHu0/stop-the-slop-for-shadowrocket/releases/latest)
 [![Runtime](https://img.shields.io/badge/Runtime-Shadowrocket-5865f2?style=flat-square)](#installation)
 [![Privacy](https://img.shields.io/badge/Privacy-Policy-15803d?style=flat-square)](PRIVACY.md)
 [![Upstream](https://img.shields.io/badge/Reference-Stop_the_Slop-555?style=flat-square)](https://github.com/MauroPello/stop-the-slop)
@@ -13,9 +13,9 @@
 
 ## 下载与相关项目
 
-- **安装包：** [下载最新版本](https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket/releases/latest)，当前发布版本为 **0.4.3**。
+- **安装包：** [下载最新版本](https://github.com/LynkHu0/stop-the-slop-for-shadowrocket/releases/latest)，当前发布版本为 **0.4.3**。
 - **浏览器插件版：** [Stop the Slop for BIlibili](https://github.com/LynkHu0/Stop-the-Slop-for-Bilibili)。
-- **问题反馈：** [GitHub Issues](https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket/issues)。请注明设备、系统、Shadowrocket和B站版本，不要附带Key、Cookie或填写过参数的模块。
+- **问题反馈：** [GitHub Issues](https://github.com/LynkHu0/stop-the-slop-for-shadowrocket/issues)。请注明设备、系统、Shadowrocket和B站版本，不要附带Key、Cookie或填写过参数的模块。
 - **上游参考：** [Stop the Slop — YouTube AI Script Detector](https://github.com/MauroPello/stop-the-slop)。
 
 ---
@@ -70,7 +70,7 @@
 ### 导入模块
 
 1. 准备 Shadowrocket、自己的 DeepSeek API Key、可用的 B站网页登录态，以及用户自行配置的HTTPS解密环境。
-2. [下载安装ZIP](https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket/releases/latest) 并解压，先阅读 `INSTALL.txt` 和 `PRIVACY.md`。
+2. [下载安装ZIP](https://github.com/LynkHu0/stop-the-slop-for-shadowrocket/releases/latest) 并解压，先阅读 `INSTALL.txt` 和 `PRIVACY.md`。
 3. 把 `Script/` 中4个JS复制到 `iCloud云盘/Shadowrocket/Script/`，把 `NoAIText.Title.srmodule` 复制到 `iCloud云盘/Shadowrocket/Modules/`。
 4. **停用全部旧版封面、TEST及其他旧NoAIText模块**。在Shadowrocket中启用 `Stop the Slop for Shadowrocket`，填写自己的Key并编译配置。
 5. 按 [完整安装说明](docs/INSTALL-Title.txt) 准备会话，重新打开B站刷新新列表。
@@ -103,8 +103,8 @@
 ## 开发与检查
 
 ```sh
-git clone https://github.com/LynkHu0/Stop-the-Slop-for-Shadowrocket.git
-cd Stop-the-Slop-for-Shadowrocket
+git clone https://github.com/LynkHu0/stop-the-slop-for-shadowrocket.git
+cd stop-the-slop-for-shadowrocket
 npm ci
 npm run build
 npm test
